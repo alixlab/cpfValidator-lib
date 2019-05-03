@@ -4,36 +4,52 @@ let expect = chai.expect;
 let cpfValidator = require('../lib/index');
 
 describe('cpf lib', () => {
-  describe('cpfValidator', () => {
-    it('It should be true for pattern cpf', () => {
+  describe('when it is pattern cpf', () => {
+    it('It should be true', () => {
       expect(cpfValidator.cpfValidator('48474253322')).to.equal(true);
     });
-    it('It should be false for cpf with invalid digit', () => {
-      expect(cpfValidator.cpfValidator('48474253321')).to.equal(false);
+    it('It should be true', () => {
+      expect(cpfValidator.cpfValidator('47048021080')).to.equal(true);
     });
-    it('It should be false for repeated numbers', () => {
-      expect(cpfValidator.cpfValidator('11111111111')).to.equal(false);
-    });
-    it('It should be false for known invalid cpf', () => {
-      expect(cpfValidator.cpfValidator('01234567890')).to.equal(false);
-    });
-    it('It should be false for empty string', () => {
-      expect(cpfValidator.cpfValidator('')).to.equal(false);
-    });
-    it('It should be true for cpf with special characters', () => {
+    it('It should be true with special characters', () => {
       expect(cpfValidator.cpfValidator('458.112-445/09')).to.equal(true);
     });
-    it('It should be false for boolean', () => {
-      expect(cpfValidator.cpfValidator(true)).to.equal(false);
+    describe('when cpf has invalid digit', () => {
+      it('It should be false', () => {
+        expect(cpfValidator.cpfValidator('48474253321')).to.equal(false);
+      });
+      it('It should be false', () => {
+        expect(cpfValidator.cpfValidator('48474253311')).to.equal(false);
+      });
     });
-    it('It should be false for non-digits', () => {
-      expect(cpfValidator.cpfValidator('Alice Labar')).to.equal(false);
+    describe('when it is known invalid cpf', () => {
+      it('It should be false', () => {
+        expect(cpfValidator.cpfValidator('11111111111')).to.equal(false);
+      });
+      it('It should be false', () => {
+        expect(cpfValidator.cpfValidator('01234567890')).to.equal(false);
+      });
     });
-    it('It should be false for inputs with length different from 11', () => {
-      expect(cpfValidator.cpfValidator('5418432753')).to.equal(false);
+    describe('when it does not have a number', () => {
+      it('It should be false for empty string', () => {
+        expect(cpfValidator.cpfValidator('')).to.equal(false);
+      });
+      it('It should be false with letters', () => {
+        expect(cpfValidator.cpfValidator('Alice Labar')).to.equal(false);
+      });
+      it('It should be false for boolean', () => {
+        expect(cpfValidator.cpfValidator(true)).to.equal(false);
+      });
     });
-    it('It should be true for cpf beginning with 0', () => {
-      expect(cpfValidator.cpfValidator('04411353822')).to.equal(true);
+    describe('when its length is different from 11', () => {
+      it('It should be false', () => {
+        expect(cpfValidator.cpfValidator('5418432753')).to.equal(false);
+      });
+    });
+    describe('when pattern cpf begins with 0 and has 11 digits', () => {
+      it('It should be true', () => {
+        expect(cpfValidator.cpfValidator('04411353822')).to.equal(true);
+      });
     });
   });
 });
