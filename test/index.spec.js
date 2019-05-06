@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-let chai = require('chai');
-let expect = chai.expect;
-let cpfValidator = require('../lib/index');
+const chai = require('chai');
+const expect = chai.expect;
+const cpfValidator = require('../lib/index');
 
 describe('cpf lib', () => {
   describe('when it is pattern cpf', () => {

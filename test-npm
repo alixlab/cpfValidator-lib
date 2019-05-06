@@ -1,0 +1,19 @@
+# Preparando o ambiente
+mkdir teste
+cd teste
+npm install cpf-lib
+npm install creditcard-lib
+
+#Criei arquivos -cpf.js e -creditcard.js
+
+## -cpf.js
+	const cpfValidator = require('./node_modules/cpf-lib/lib/index')
+	console.log(cpfValidator.cpfValidator('31500947806'))
+
+## -creditcard.js
+	const cardValidator = require('./node_modules/creditcard-lib/lib/index');
+	console.log(cardValidator.cardValidator('4532583597717044'));
+
+# Resultados
+	true
+	true

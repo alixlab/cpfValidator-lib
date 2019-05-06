@@ -1,7 +1,7 @@
 {
   "name": "cpf-lib",
   "version": "1.0.0",
-  "description": "biblioteca para validar número de CPF",
+  "description": "A JS library to validate CPF number",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/nyc/bin/nyc.js ./node_modules/mocha/bin/mocha",
