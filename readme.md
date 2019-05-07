@@ -1,4 +1,4 @@
-# cpf-lib v.1.0.0
+# cpf-al v.1.0.0
 <p> O objetivo desta biblioteca é validar um número de CPF, retornando true ou false, de acordo com o caso.</p>
 
 # Como instalar?
