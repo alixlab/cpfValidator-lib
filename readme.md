@@ -2,12 +2,12 @@
 <p> O objetivo desta biblioteca é validar um número de CPF, retornando true ou false, de acordo com o caso.</p>
 
 # Como instalar?
-$ npm install cpf-lib
+$ npm install cpf-al
 
 # Como utilizar?
 ```
->const cpfValidator = require('./node_modules/cpf-lib/lib/index');
->console.log(cpfValidator.cpfValidator('48474253322'));
+>const cpfValidator = require('cpf-al');
+>cpfValidator.cpfValidator('48474253322');
 > // returns true;
 ```
 
